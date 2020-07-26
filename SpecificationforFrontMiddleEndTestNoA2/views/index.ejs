@@ -3,27 +3,44 @@
   <head>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title><%= title %></title>
+    <link rel="icon" href="/images/IconLiveU.png">
   </head>
   <body>
+    <img id="logo" src="images/LogoLiveU.png" alt="Live University Logo">
     <div id="obj1">
-      <div id="option">
-        <button>option</button>
+      <div id="option" >
+        <button id="optionButton" class="secondaryDefinition">option</button>
       </div>
+      <div id="QuantityLabel" class="secondaryDefinition">
         <label for="Quantity">Quantity</label>
         <input type="number" id="Quantity" name="Quantity" placeholder="Type here">
       </div>
     </div>
     <div id="obj2">
-      <select name="Itens" id="itens" >
+      <select name="Itens" id="Itens" >
         <option value="Dropdown" disabled selected>Dropdown</option>
         <option value="A">A</option>
         <option value="B">B</option>
       </select>
     </div>
     <div id="obj3">
-      <% for( let index = 1; index < 12; index++ ) { %>
-        <h1>item <%= index  %></h1> 
-      <% } %>
+      <h1>Item generator</h1>
+      <ul id="itemlist">
+        
+      </ul>
+      <div id="buttons">
+        <button id="back">
+          <i class="material-icons">skip_previous</i>
+        </button>
+        <button id="next">
+          <i class="material-icons">skip_next</i>
+        </button>
+      </div>
     </div>
+    <footer><p>Arthur Alves Correa | candidato a vaga de desenvolvedor</p></footer>
+    <script src="javascripts/dinamicValue.js"></script>
+    <script src="javascripts/animation.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   </body>
 </html>

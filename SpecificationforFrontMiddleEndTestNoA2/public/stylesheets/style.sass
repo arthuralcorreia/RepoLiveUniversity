@@ -1,6 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+$primary-color: #8E2694
+$secondary-color: #0CB9C1
+$tertiary-color: #f2d70c8e
+$font-definition: 25px
+$font-color: white
+$family-font: 'Roboto', sans-serif
+
 body
   padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font-family: $family-font
+  font-size: $font-definition
+  line-height: 1em
+  height: 100vh
+  width: 100%
+  margin: 0
+  padding: 0
+  display: grid
+  grid-template-columns: 5% 20% 5% auto 5%
+  grid-template-rows: repeat(9, 1fr)
+  grid-template-areas: ". logo . obj3 ." ". obj1 . obj3 ." ". obj1 . obj3 ." ". obj1 . obj3 ."". obj1 . obj3 ."". obj1 . obj3 ."". obj1 . obj3 ."". . . . .""ft ft ft ft ft"
+  color: $font-color
 
-a
-  color: #00B7FF
+#logo
+  grid-area: logo
+  align-self: center
+  justify-self: center
+
+@for $i from 1 through 3 
+  #obj#{$i} { grid-area: obj#{$i}; border-radius: 10px}
+
+#obj1
+  background-color: $secondary-color
+  display: grid
+  grid-template-rows: repeat(7, 1fr)
+  grid-template-columns: 100%
+  grid-template-areas: ".""opt"".""Quantity"
+  z-index: 100
+
+  #option
+    grid-area: opt
+
+    button
+      height: 100%
+      width: 100%
+      
+
+  #QuantityLabel
+    grid-area: Quantity
+    display: grid
+    justify-items: center
+    align-items: center
+  
+  #Quantity
+    background-color: $tertiary-color
+    color: $primary-color
+    border-radius: 15px
+    font-size: $font-definition
+    width: 80%
+    height: 80%
+    font-family: $family-font
+
+  @keyframes blinkRed
+    0%
+      border: solid red 1px
+    50%
+      border: solid red 3px
+    100%
+      border: solid red 1px
+      
+
+#obj2
+
+  background-color: $primary-color
+  grid-row: 2/8
+  grid-column: 2
+  z-index: 50
+  width: 50%
+  justify-self: right
+
+  @keyframes slide
+    0% 
+      opacity: 1
+
+    100%
+      transform: translate(100%)
+
+  @keyframes dissapier
+    0%
+      opacity: 1
+      transform: translate(100%)
+
+    90%
+      opacity: 0
+
+    100%
+      opacity: 0
+      transform: translate(100%)
+
+#obj3
+  display: grid
+  grid-template-rows: repeat(7, 1fr)
+  grid-template-columns: 100%
+  z-index: 0
+  justify-items: center
+  align-items: center
+  
+
+  h1
+    grid-area: title
+    font-size: $font-definition
+    color: $primary-color
+    grid-row: 1
+    grid-column: 1
+
+  #buttons
+    grid-area: bttn
+    grid-row: 7
+    grid-column: 1
+
+  #itemlist
+    width: 100%
+    height: 100%
+    grid-gap: listIten
+    grid-row: 2/6
+    list-style: none
+    margin: 0
+    padding: 0
+
+
+    li
+      @extend .secondaryDefinition
+      padding: 25px
+      display: grid
+      border: 5px
+      align-items: center
+      justify-items: center
+      grid-template-columns: 10% 90%
+      grid-template-rows: 100%
+
+footer
+  grid-area: ft
+  background-color: $primary-color
+  display: grid
+
+  p
+    font-size: 11pt
+    align-self: center
+    justify-self: left
+
+
+.secondaryDefinition
+  font-size: $font-definition
+  background-color: $primary-color
+  color: $font-color
+  font-family: 'Roboto', sans-serif
+  border-radius: 10px
+
+.tertiary-definition
+  color: $tertiary-color
+  border: none
+  height: 50%
+  background-color: rgba(0, 0, 0, 0)
