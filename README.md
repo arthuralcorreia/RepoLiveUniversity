@@ -13,3 +13,5 @@ npm install
 DEBUG=specificationforfrontmiddlendtestnoa2:* nodemon start
 
 ```
+
+Abra o servidor no navegador, utilizando o [endereço](localhost:3000) localhost:3000
