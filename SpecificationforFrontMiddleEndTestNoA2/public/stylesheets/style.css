@@ -121,7 +121,8 @@ body {
       align-items: center;
       justify-items: center;
       grid-template-columns: 10% 90%;
-      grid-template-rows: 100%; }
+      grid-template-rows: 100%;
+      margin: 0 0 25px 0; }
 
 footer {
   grid-area: ft;

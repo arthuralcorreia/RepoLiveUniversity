@@ -7,7 +7,6 @@ document.addEventListener("click", () => {
         obj2.style.animation = "slide 2s forwards" 
     }  else if (event.target !== obj2) {
         obj2.style.animation = "dissapier 2s forwards"
-    console.log(event.target !== obj2)
 }})
 
 

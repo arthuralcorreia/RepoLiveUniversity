@@ -58,6 +58,7 @@ function generation(){
 function pagination(){
     itemlist.innerHTML = ""
     for (let index = page; index < page + 3; index++) {
+        console.log(window.page)
         try {
             itemlist.appendChild(itens[index])
         } catch (error) {
@@ -68,11 +69,12 @@ function pagination(){
 function nextPage(){
     
         next.addEventListener('click', () => {
-            if (page < itens.length){
+            if (window.page < itens.length){
                 window.page += 3
-                if(page < itens.length){
+                // O bug esta aquii
+                if(window.page < itens.length){
                     pagination()
-                    console.log(itens.length, page)
+                    console.log(itens.length, page, page / 3)
                 } 
             } else {
                 window.page -= 3
